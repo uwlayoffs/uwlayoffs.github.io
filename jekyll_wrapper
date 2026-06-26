@@ -1,0 +1,9 @@
+#!/bin/sh
+
+docker build --tag custom_jekyll . 
+
+docker run --rm \
+  --volume="$PWD/uwlayoffs:/opt" \
+  -it \
+  custom_jekyll $@
+
